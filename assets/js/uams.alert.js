@@ -34,9 +34,9 @@ UAMS.Alert = Backbone.View.extend({
 UAMS.Alert.Model = Backbone.Model.extend({
 
   alerts :  [
-    'red-alert-urgent',
-    'orange-alert',
-    'steel-alert-fyis',
+    'urgent-uams',
+    'alert-uams',
+    'fyi-uams',
   ],
 
   data  : {

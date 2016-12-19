@@ -10968,23 +10968,23 @@ UAMS.elements = {
 
 }
 
-//UAMS.getBaseUrl = function() {
-  //var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
-  //var url = ''
+UAMS.getBaseUrl = function() {
+  var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
+  var url = ''
 
-//  if (!Backbone.history.location.origin) {
-  //  Backbone.history.location.origin = Backbone.history.location.protocol + "//" + Backbone.history.location.hostname + (Backbone.history.location.port ? ':' + Backbone.history.location.port: '');
-  //}
+  if (!Backbone.history.location.origin) {
+    Backbone.history.location.origin = Backbone.history.location.protocol + "//" + Backbone.history.location.hostname + (Backbone.history.location.port ? ':' + Backbone.history.location.port: '');
+  }
 
-//  if (Backbone.history.location.origin.indexOf('www.uams.edu') != -1) {
-  //  url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
- // } else if (Backbone.history.location.origin.indexOf('uamsonline.com') != -1) {
-   // url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
-  //} else {
-  //  url = Backbone.history.location.origin + '/';
- // }
- // return url
-//}
+  if (Backbone.history.location.origin.indexOf('www.uams.edu') != -1) {
+    url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
+  } else if (Backbone.history.location.origin.indexOf('uamsonline.com') != -1) {
+    url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
+  } else {
+    url = Backbone.history.location.origin + '/';
+  }
+  return url
+}
 
 UAMS.wpinstance = function(){
   return Backbone.history.location.pathname ? Backbone.history.location.pathname : "";
@@ -10992,7 +10992,7 @@ UAMS.wpinstance = function(){
 
 UAMS.sources = {
   // Note: style_dir is a variable created by the Wordpress' wp_localize_script in class.uams-scripts.php
-//  quicklinks : typeof(style_dir) !== 'undefined' ? style_dir + '/wp-admin/admin-ajax.php?action=quicklinks' : UAMS.getBaseUrl() + 'wp-admin/admin-ajax.php?action=quicklinks',
+  quicklinks : typeof(style_dir) !== 'undefined' ? style_dir + '/wp-admin/admin-ajax.php?action=quicklinks' : UAMS.getBaseUrl() + 'wp-admin/admin-ajax.php?action=quicklinks',
   search     : UAMS.getBaseUrl() + 'wp-admin/admin-ajax.php'
 }
 
@@ -11051,7 +11051,7 @@ jQuery(document).ready(function(){
     'click .close' : 'hide'
   },
 
-  template : '<div id="uamsalert-alert-message" class="<% _.each( categories, function( category ) { %> <%= category.slug %> <% }) %>"><div class="container"><span class="close">Close</span><h1><%= title %></h1><p><%= excerpt %><a class="more" href="http://emergency.uw.edu" title="<%= title %>">More info</a></p></div></div>',
+  template : '<div id="uamsalert-alert-message" class="<% _.each( categories, function( category ) { %> <%= category.slug %> <% }) %>"><div class="container"><span class="close">Close</span><h1><%= title %></h1><p><%= excerpt %><a class="more" href="http://uamsalert.wordpress.com" title="<%= title %>">More info</a></p></div></div>',
 
   initialize  : function( options )
   {
@@ -11079,9 +11079,9 @@ jQuery(document).ready(function(){
 UAMS.Alert.Model = Backbone.Model.extend({
 
   alerts :  [
-    'red-alert-urgent',
-    'orange-alert',
-    'steel-alert-fyis',
+    'urgent-uams',
+    'alert-uams',
+    'fyi-uams',
   ],
 
   data  : {
@@ -11093,7 +11093,7 @@ UAMS.Alert.Model = Backbone.Model.extend({
     dataType: 'json'
   },
 
-  url :  'https://public-api.wordpress.com/rest/v1/sites/uwemergency.wordpress.com/posts/',
+  url :  'https://public-api.wordpress.com/rest/v1/sites/uamsalert.wordpress.com/posts/',
 
   initialize : function()
   {
@@ -11168,7 +11168,7 @@ UAMS.Search = Backbone.View.extend({
                     '</form>'+
 
                     '<select id="mobile-search-select" class="visible-xs">' +
-                      '<option value="uams" selected>All the UAMS</option>' +
+                      '<option value="uams" selected>All of UAMS</option>' +
                       '<option value="site">Current site</option>' +
                     '</select>' +
 
