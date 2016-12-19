@@ -18,27 +18,27 @@ UAMS.elements = {
 
 }
 
-//UAMS.getBaseUrl = function() {
-//  var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
-//  var url = ''
-//
-//  if (!Backbone.history.location.origin) {
-//    Backbone.history.location.origin = Backbone.history.location.protocol + "//" + Backbone.history.location.hostname + (Backbone.history.location.port ? ':' + Backbone.history.location.port: '');
-//  }
+UAMS.getBaseUrl = function() {
+  var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
+  var url = ''
 
-//  if (Backbone.history.location.origin.indexOf('www.uams.edu') != -1) {
-//    url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
-//  } else if (Backbone.history.location.origin.indexOf('uamsonline.com') != -1) {
-//    url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
-//  } else {
-//    url = Backbone.history.location.origin + '/';
-// }
-//  return url
-//}
+  if (!Backbone.history.location.origin) {
+    Backbone.history.location.origin = Backbone.history.location.protocol + "//" + Backbone.history.location.hostname + (Backbone.history.location.port ? ':' + Backbone.history.location.port: '');
+  }
 
-//UAMS.wpinstance = function(){
-//  return Backbone.history.location.pathname ? Backbone.history.location.pathname : "";
-//}
+  if (Backbone.history.location.origin.indexOf('www.uams.edu') != -1) {
+    url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
+  } else if (Backbone.history.location.origin.indexOf('uamsonline.com') != -1) {
+    url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
+  } else {
+    url = Backbone.history.location.origin + '/';
+  }
+  return url
+}
+
+UAMS.wpinstance = function(){
+  return Backbone.history.location.pathname ? Backbone.history.location.pathname : "";
+}
 
 UAMS.sources = {
   // Note: style_dir is a variable created by the Wordpress' wp_localize_script in class.uams-scripts.php

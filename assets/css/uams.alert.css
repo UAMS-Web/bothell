@@ -8,6 +8,17 @@
  font-size: 25px;
 }
 #uamsalert-alert-message a.more:after {
+	background: url(../svg/uams-sprite.svg) no-repeat -206px -492px;
+    content: "";
+    position: absolute;
+    right: -24px;
+    bottom: 3px;
+    width: 14px;
+    height: 21px;
+    -o-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
  background-position: -239px -492px;
 }
 #uamsalert-alert-message p {
@@ -18,6 +29,7 @@
 #uamsalert-alert-message a.more {
  color: #FDE048 ;
  display: inline-block;
+ font-size: 19px;
 }
 #uamsalert-alert-message a.more:after {
  bottom: 3px;
@@ -36,7 +48,7 @@
 }
 #uamsalert-alert-message .close {
  position: absolute;
- background: url(assets/svg/uams-sprite.svg) no-repeat -874px 6px transparent;
+ background: url(../svg/uams-sprite.svg) no-repeat -874px 6px transparent;
  text-indent: -9999px;
  overflow: hidden;
  width: 40px;
@@ -51,7 +63,7 @@
 }
 @media only screen and (min-width: 1201px) {
  #uamsalert-alert-message {
-   background: url(assets/images/alert.png) no-repeat 0 -10px transparent;
+   background: url(../images/alert.png) no-repeat 0 -10px transparent;
    padding-left: 125px;
  }
 }
