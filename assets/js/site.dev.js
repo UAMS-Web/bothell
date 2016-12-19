@@ -10951,7 +10951,7 @@ UAMS.KEYCODES = {
 ;// List out the classes that each component searches for
 UAMS.elements = {
 
-  alert      : '.mobile-menu',
+  alert      : '.fusion-header-wrapper',
   accordion  : '.uams-accordion',
   dropdowns  : '#reddiedrops',
   images     : 'a > img',
