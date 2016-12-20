@@ -10,4 +10,4 @@ Bothell is the default Avada 5 child theme for UAMShealth.com websites. The name
 
 ## License
 - - - 
-GPL-2.0+
+GPL-3.0+
