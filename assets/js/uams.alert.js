@@ -136,7 +136,7 @@ jQuery(document).ready(function(){
     'click .close' : 'hide'
   },
 
-  template : '<div id="uamsalert-alert-message" class="<% _.each( categories, function( category ) { %> <%= category.slug %> <% }) %>"><div class="container"><span class="close">Close</span><h1><%= title %></h1><p><%= excerpt %><a class="more" href="http://uamsalert.wordpress.com" title="<%= title %>">More info</a></p></div></div>',
+  template : '<div id="uamsalert-alert-message" class="<% _.each( categories, function( category ) { %> <%= category.slug %> <% }) %>"><div class="container"><span class="close">Close</span><h1><%= title %></h1><p><%= excerpt %><br/><a class="more" href="http://uamsalert.wordpress.com" title="<%= title %>">More info</a></p></div></div>',
 
   initialize  : function( options )
   {
